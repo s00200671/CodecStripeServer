@@ -2,6 +2,15 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 app.use(express.static('public'));
+const cors = require("cors");
+
+const corsOptions = {
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions)) // Use this after the variable declaration
 
 const port = port = process.env.PORT || 3000
 const stripe = require("Stripe")(process.env["STRIPE_SK"]);
@@ -27,7 +36,7 @@ console.log(req.query);
         cancel_url: "https://portal301.powerappsportals.com/account/payments",
         customer_email: req.query.customer_email //req.params.cus_email
     });
-    
+
     res.redirect(303, session.url);
 });
 
