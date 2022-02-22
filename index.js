@@ -10,7 +10,7 @@ const corsOptions = {
    optionSuccessStatus:200,
 }
 
-app.use(cors(corsOptions)) // Use this after the variable declaration
+app.use(cors()) // Use this after the variable declaration
 
 const port = port = process.env.PORT || 3000
 const stripe = require("Stripe")(process.env["STRIPE_SK"]);
