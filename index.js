@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 app.use(express.static('public'));
 
-const port = 3000;
+const port = port = process.env.PORT || 3000
 const stripe = require("Stripe")(process.env["STRIPE_SK"]);
 
 app.post('/create-checkout-session', async (req, res) => {
@@ -27,8 +27,8 @@ console.log(req.query);
         cancel_url: "https://portal301.powerappsportals.com/account/payments",
         customer_email: req.query.customer_email //req.params.cus_email
     });
-
+    
     res.redirect(303, session.url);
 });
 
-app.listen(port, () => console.log("Hi"));
+app.listen(port, () => console.log("Port open"));
