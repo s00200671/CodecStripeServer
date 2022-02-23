@@ -3,14 +3,14 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-const corsOptions = {
-    origin: "https://portal301.powerappsportals.com",
-    credentials: true // for cookies
-}
+// const corsOptions = {
+//     origin: "https://portal301.powerappsportals.com",
+//     credentials: true // for cookies
+// }
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors(corsOptions));
+app.use(cors());
 
 const port = port = process.env.PORT || 3000
 const stripe = require("Stripe")(process.env["STRIPE_SK"]);
