@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-app.use(express.static('public'));
 const cors = require("cors");
 
 const corsOptions = {
@@ -9,7 +8,9 @@ const corsOptions = {
     credentials: true // for cookies
 }
 
-app.use(cors(corsOptions)); // Use this after the variable declaration
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cors(corsOptions));
 
 const port = port = process.env.PORT || 3000
 const stripe = require("Stripe")(process.env["STRIPE_SK"]);
