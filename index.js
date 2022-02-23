@@ -13,7 +13,7 @@ const corsOptions = {
 app.use(cors()) // Use this after the variable declaration
 
 const port = port = process.env.PORT || 3000
-const stripe = require("Stripe")(process.env["STRIPE_SK"]);
+const stripe = require("Stripe")("12345");//process.env["STRIPE_SK"]);
 
 app.post('/create-checkout-session', async (req, res) => {
 console.log(req.query);
