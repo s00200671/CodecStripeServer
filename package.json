@@ -3,8 +3,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "node": "^16.13.2",
     "stripe": "^8.204.0"
+  },
+  "engines": {
+    "node": "16.x"
   },
   "name": "codecstripeserver",
   "description": "",
