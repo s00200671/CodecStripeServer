@@ -5,5 +5,23 @@
     "express": "^4.17.3",
     "node": "^16.13.2",
     "stripe": "^8.204.0"
-  }
+  },
+  "name": "codecstripeserver",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s00200671/CodecStripeServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s00200671/CodecStripeServer/issues"
+  },
+  "homepage": "https://github.com/s00200671/CodecStripeServer#readme"
 }
