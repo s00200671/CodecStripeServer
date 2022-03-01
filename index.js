@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions));
 
 const port = process.env.PORT || 3000
-const stripe = require("Stripe");
+const stripe = require("stripe")(process.env["STRIPE_SK"]);
 
 app.get("/", async (req, res) => {console.log("hello"), res.json({stauts: 200})})
 app.post('/create-checkout-session', async (req, res) => {
