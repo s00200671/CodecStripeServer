@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 
 const corsOptions = {
-    origin: "https://portal-302.powerappsportals.com/",
+    origin: "https://portal-302.powerappsportals.com/*",
     credentials: true // for cookies
 }
 
@@ -33,8 +33,8 @@ console.log(req.query);
                 orderId: req.query.order_id
             }
         },
-        success_url: "https://portal301.powerappsportals.com/account/payments/successfulPayment?&session_id={CHECKOUT_SESSION_ID}",
-        cancel_url: "https://portal301.powerappsportals.com/account/payments",
+        success_url: "https://portal-302.powerappsportals.com/account/payments/successfulPayment?&session_id={CHECKOUT_SESSION_ID}",
+        cancel_url: "https://portal-302.powerappsportals.com/account/payments",
         customer_email: req.query.customer_email //req.params.cus_email
     });
 
