@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 
 const corsOptions = {
-    origin: "*",
+    origin: "https://portal-302.powerappsportals.com/",
     credentials: true // for cookies
 }
 
@@ -38,7 +38,7 @@ console.log(req.query);
         customer_email: req.query.customer_email //req.params.cus_email
     });
 
-    res.redirect(303, session.url);
+    res.json(303, {url: session.url});
 });
 
 app.listen(port, () => console.log("Port open"));
