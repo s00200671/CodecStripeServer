@@ -38,7 +38,7 @@ console.log(req.query);
         customer_email: req.query.customer_email //req.params.cus_email
     });
 
-    res.json(303, {url: session.url});
+    res.status(200).json({req, res, url: session.url});
 });
 
 app.listen(port, () => console.log("Port open"));
