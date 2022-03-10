@@ -33,6 +33,9 @@ console.log(req.query);
                 orderId: req.query.order_id
             }
         },
+        discounts: [{
+            coupon: req.query.grantd
+        }],
         success_url: "https://portal-302.powerappsportals.com/account/payments/successfulPayment?&session_id={CHECKOUT_SESSION_ID}",
         cancel_url: "https://portal-302.powerappsportals.com/account/payments",
         customer_email: req.query.customer_email //req.params.cus_email
