@@ -19,7 +19,7 @@ app.get("/", async (req, res) => {console.log("hello"), res.json({stauts: 200})}
 app.post('/create-checkout-session', async (req, res) => {
 console.log(req.query);
 
-    const session = await stripe.checkout.sessions.create({
+    var obj = {
         line_items: [
             {
                 // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
@@ -33,13 +33,14 @@ console.log(req.query);
                 orderId: req.query.order_id
             }
         },
-        discounts: [{
-            coupon: req.query.grantd
-        }],
         success_url: "https://portal-302.powerappsportals.com/account/payments/successfulPayment?&session_id={CHECKOUT_SESSION_ID}",
         cancel_url: "https://portal-302.powerappsportals.com/account/payments",
         customer_email: req.query.customer_email //req.params.cus_email
-    });
+    };
+
+    if (req.query.grantd) obj.discounts = [{coupon : req.query.grantd}];
+
+    const session = await stripe.checkout.sessions.create(obj);
 
     res.status(200).send({surl: session.url});
 });
