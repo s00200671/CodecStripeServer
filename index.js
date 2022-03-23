@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 
 const corsOptions = {
-    origin: "https://portal-302.powerappsportals.com",
+    origin: "https://cus.powerappsportals.com",
     credentials: true // for cookies
 }
 
